@@ -76,18 +76,19 @@ function App() {
       10: ten,
       total: totalamount,
     };
+    setTwoThousand(0);
+    setFiveHundred(0);
+    setTwoHundred(0);
+    setHundred(0);
+    setFifty(0);
+    setTwenty(0);
+    setTen(0);
 
     try {
       const response = await api.post("/history", addNewItem);
       const listitems = [...history, response.data];
       setHistory(listitems);
-      setTwoThousand(0);
-      setFiveHundred(0);
-      setTwoHundred(0);
-      setHundred(0);
-      setFifty(0);
-      setTwenty(0);
-      setTen(0);
+
       window.alert("Please Check The History Page For More Detail");
     } catch (err) {
       console.log(err.message);
